@@ -1,0 +1,31 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.Doktor
+
+@{
+    ViewData["Title"] = "Doktor Kayıt Silme";
+}
+
+<h1>Doktor Kayıt Silme</h1>
+<div>
+    <h3>Silmek İstiyor musunuz?</h3>
+    <hr class="border-1" />
+    <dl class="row border-1">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Soyad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DoktorId" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+    </form>
+</div>

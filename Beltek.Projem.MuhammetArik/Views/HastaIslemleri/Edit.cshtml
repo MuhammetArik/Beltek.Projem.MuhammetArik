@@ -1,0 +1,39 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.Hasta
+
+@{
+    ViewData["Title"] = "Hasta Kayıt Güncelleme";
+}
+
+<h1>Hasta Kayıt Güncelleme</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HastaId" />
+            <div class="form-group">
+                <label asp-for="Ad" class="control-label"></label>
+                <input asp-for="Ad" class="form-control" />
+                <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Soyad" class="control-label"></label>
+                <input asp-for="Soyad" class="form-control" />
+                <span asp-validation-for="Soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TCNo" class="control-label"></label>
+                <input asp-for="TCNo" class="form-control" />
+                <span asp-validation-for="TCNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="buttonStyle" /> |
+                <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

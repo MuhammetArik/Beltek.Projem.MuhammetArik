@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Beltek.Projem.MuhammetArik.Models.RandevuAl>
+
+@{
+    ViewData["Title"] = "Randevu İşlemleri";
+}
+
+@* Farklı RandevuId, HastaId, DoktorId, içeren kayıtlar, Düzenlenip, Silinebiliyor *@
+<h1>Randevu İşlemleri</h1>
+
+<p>
+    <a class="bi bi-arrow-right-circle buttonStyle" asp-action="Create">Randevu Al</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RandevuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hasta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klinik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doktor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RandevuZamani)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RandevuId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hasta.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Klinik.Adi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doktor.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RandevuZamani)
+                </td>
+                <td>
+                    <a class="bi bi-pencil-square d-inline p-2 bg-success text-white" asp-action="Edit" asp-route-id="@item.RandevuId">Düzenle</a> |
+                    <a class="bi bi-info-circle d-inline p-2 bg-info text-white" asp-action="Details" asp-route-id="@item.RandevuId">Detaylar</a> |
+                    <a class="bi bi-trash d-inline p-2 bg-danger text-white" asp-action="Delete" asp-route-id="@item.RandevuId">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

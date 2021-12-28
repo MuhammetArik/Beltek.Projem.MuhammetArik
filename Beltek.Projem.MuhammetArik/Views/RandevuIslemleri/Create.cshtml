@@ -1,0 +1,45 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.RandevuAl
+
+@{
+    ViewData["Title"] = "Randevu Kayıt";
+}
+
+<h1>Randevu Kayıt</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RandevuId" class="control-label"></label>
+                <input asp-for="RandevuId" class="form-control" />
+                <span asp-validation-for="RandevuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HastaId" class="control-label">Hasta Adı</label>
+                <select asp-for="HastaId" class="form-control" asp-items="ViewBag.HastaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KlinikId" class="control-label">Klinik Adı</label>
+                <select asp-for="KlinikId" class="form-control" asp-items="ViewBag.KlinikId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoktorId" class="control-label">Doktor Adı</label>
+                <select asp-for="DoktorId" class="form-control" asp-items="ViewBag.DoktorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RandevuZamani" class="control-label"></label>
+                <input asp-for="RandevuZamani" class="form-control" />
+                <span asp-validation-for="RandevuZamani" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="buttonStyle" /> |
+                <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

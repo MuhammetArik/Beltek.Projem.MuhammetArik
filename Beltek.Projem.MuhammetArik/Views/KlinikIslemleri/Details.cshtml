@@ -1,0 +1,20 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.Klinik
+
+@{
+    ViewData["Title"] = "Klinik Bilgileri";
+}
+
+<div>
+    <h1>Klinik Bilgileri</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Adi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Adi)
+        </dd>
+    </dl>
+    <a class="bi bi-pencil-square d-inline p-2 bg-success text-white" asp-action="Edit" asp-route-id="@Model.KlinikId">Düzenle</a> |
+    <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+</div>

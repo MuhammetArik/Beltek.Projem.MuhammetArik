@@ -1,0 +1,52 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.RandevuAl
+
+@{
+    ViewData["Title"] = "Randevu Silme Ekranı";
+}
+
+<h1>Randevu Silme Ekranı</h1>
+
+<div>
+    <h3>Silmek İstiyor musunuz?</h3>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RandevuId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RandevuId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hasta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hasta.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Klinik)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Klinik.Adi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doktor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Doktor.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RandevuZamani)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RandevuZamani)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="HastaId" />
+        <input type="hidden" asp-for="KlinikId" />
+        <input type="hidden" asp-for="DoktorId" />
+        <input type="submit" value="Sil" class="btn btn-danger bi bi-trash" /> |
+        <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+    </form>
+</div>

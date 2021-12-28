@@ -1,0 +1,32 @@
+﻿/*Site Css Ayarları*/
+
+.buttonStyle {
+    text-align: center;
+    color: white;
+    background-color: steelblue;
+    border-radius: 12px;
+    border: none;
+    transition-duration: 0.4s;
+    padding: 5px 10px;
+}
+
+    .buttonStyle:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+        padding: 5px 10px;
+    }
+
+.menuStyle {
+    background-color: #00B8E6;
+    color: white;
+}
+
+.bodyStyle {
+    background-color: #dde9eb;
+}
+
+.footerStyle {
+    background-color: #00B8E6;
+    color: white;
+}

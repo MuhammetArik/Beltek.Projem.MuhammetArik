@@ -1,0 +1,35 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.Doktor
+
+@{
+    ViewData["Title"] = "Doktor Bilgi Güncelleme";
+}
+
+<h1>Doktor Bilgi Güncelleme</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DoktorId" />
+            <div class="form-group">
+                <label asp-for="Ad" class="control-label">Doktor Adı</label>
+                <input asp-for="Ad" class="form-control" />
+                <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Soyad" class="control-label">Doktor Soyadı</label>
+                <input asp-for="Soyad" class="form-control" />
+                <span asp-validation-for="Soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="buttonStyle" /> |
+                <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

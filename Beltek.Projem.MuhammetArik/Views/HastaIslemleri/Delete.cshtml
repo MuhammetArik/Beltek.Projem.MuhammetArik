@@ -1,0 +1,36 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.Hasta
+
+@{
+    ViewData["Title"] = "Hasta Kayıt Silme";
+}
+
+<h1>Hasta Kayıt Silme</h1>
+<div>
+    <h3>Silmek İstiyor musunuz?</h3>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Soyad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TCNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TCNo)
+        </dd>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="HastaId" />
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+        </form>
+    </dl>
+</div>

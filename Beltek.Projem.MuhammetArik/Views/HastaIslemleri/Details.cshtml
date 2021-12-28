@@ -1,0 +1,32 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.Hasta
+
+@{
+    ViewData["Title"] = "Hasta Bilgileri";
+}
+
+<div>
+    <h1>Hasta Bilgileri</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Soyad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TCNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TCNo)
+        </dd>
+    </dl>
+    <a class="bi bi-pencil-square d-inline p-2 bg-success text-white" asp-action="Edit" asp-route-id="@Model.HastaId">Düzenle</a> |
+    <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+</div>

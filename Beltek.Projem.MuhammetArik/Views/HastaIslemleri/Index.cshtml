@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Beltek.Projem.MuhammetArik.Models.Hasta>
+
+@{
+    ViewData["Title"] = "Hasta İşlemleri";
+}
+
+<h1>Hasta İşlemleri</h1>
+
+<p>
+    <a class="bi bi-arrow-right-circle buttonStyle " asp-action="Create">Hasta Kayıt Ekle</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TCNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TCNo)
+                </td>
+                <td>
+                    <a class="bi bi-pencil-square d-inline p-2 bg-success text-white" asp-action="Edit" asp-route-id="@item.HastaId">Düzenle</a> |
+                    <a class="bi bi-info-circle d-inline p-2 bg-info text-white" asp-action="Details" asp-route-id="@item.HastaId">Detaylar</a> |
+                    <a class="bi bi-trash d-inline p-2 bg-danger text-white" asp-action="Delete" asp-route-id="@item.HastaId">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

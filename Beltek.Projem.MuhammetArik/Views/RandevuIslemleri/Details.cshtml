@@ -1,0 +1,43 @@
+﻿@model Beltek.Projem.MuhammetArik.Models.RandevuAl
+
+@{
+    ViewData["Title"] = "Randevu Detayı";
+}
+
+<div>
+    <h1>Randevu Detayı</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RandevuId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RandevuId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hasta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hasta.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Klinik)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Klinik.Adi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Doktor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Doktor.Ad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RandevuZamani)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RandevuZamani)
+        </dd>
+    </dl>
+    <a class="buttonStyle" asp-action="Index">Listeye Geri Dön</a>
+</div>
